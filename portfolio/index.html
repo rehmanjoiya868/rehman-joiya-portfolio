@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rehman Joiya | Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- BACKGROUND LAYERS -->
+<div class="bg-layer layer1"></div>
+<div class="bg-layer layer2"></div>
+
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:rehmanjoiya868@gmail.com">Email</a></li>
+  </ul>
+  
+ <!-- HERO TAGLINE -->
+<div class="hero-tagline">
+  Hey, I am a Web Developer
+</div>
+
+</nav>
+
+<div class="profile" id="profile">
+  <img src="images/hnbj.jpeg" alt="Rehman Joiya">
+
+  <!-- NAME -->
+  <h3 class="profile-name">Rehman Joiya</h3>
+
+  <!-- TAGLINE -->
+  <p class="tagline">
+    I design and develop modern, fast and scalable websites that turn ideas into digital reality
+  </p>
+</div>
+
+
+  <!-- RIGHT CONTENT -->
+  <div class="right">
+
+    <h1>Personal Portfolio of<br>
+      <span>Web Developer</span>
+    </h1>
+
+    <h2>I’m <span class="name">Rehman Joiya</span></h2>
+    <p class="title">Web Developer</p>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div>
+        <h3>10+</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div>
+        <h3>20+</h3>
+        <p>Projects</p>
+      </div>
+      <div>
+        <h3>1+</h3>
+        <p>Years Experience</p>
+      </div>
+      <div>
+        <h3>100%</h3>
+        <p>Dedication</p>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services">
+      <div class="service"> <h4>Web Development</h4> <p>I create modern, responsive and fast websites using HTML, CSS and JavaScript.</p> </div>
+      <div class="service"> <h4>UI Design</h4> <p>Clean and professional UI design focused on user experience.</p> </div>
+      <div class="service"> <h4>Frontend Skills</h4> <p>HTML, CSS, JavaScript, Responsive Design & Git.</p> </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:rehmanjoiya868@gmail.com">rehmanjoiya868@gmail.com</a></p>
+        <p>Feel free to reach out for collaborations or projects.</p>
+      </div>
+    </section>
+
+    <!-- BUILT WITH -->
+    <footer>
+      <p>Built with ❤️ by Rehman Joiya</p>
+    </footer>
+
+  </div> <!-- END RIGHT -->
+
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I am Rehman Joiya, a passionate web developer with experience in building responsive and modern websites.
+      I specialize in HTML, CSS, JavaScript, and creating user-friendly interfaces.
+    </p>
+     <p class="tagline">
+    I design and develop modern, fast and scalable websites that turn ideas into digital reality
+  </p>
+  </div>
+</section>
+
+<!-- JS for Scroll + Mouse 3D Parallax -->
+<script>
+  const profile = document.getElementById('profile');
+  const services = document.querySelectorAll('.service');
+  const layer1 = document.querySelector('.layer1');
+  const layer2 = document.querySelector('.layer2');
+
+  // Scroll parallax
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    profile.style.transform = `translateY(${scroll * 0.2}px)`;
+    services.forEach((card, index)=>{
+      card.style.transform = `rotateY(${scroll * 0.05 * (index+1)}deg)`;
+    });
+    layer1.style.transform = `translateY(${scroll * 0.1}px)`;
+    layer2.style.transform = `translateY(${scroll * 0.05}px)`;
+  });
+
+  // Mouse-move parallax
+  document.addEventListener('mousemove', e => {
+    const x = (window.innerWidth / 2 - e.clientX) / 50;
+    const y = (window.innerHeight / 2 - e.clientY) / 50;
+    layer1.style.transform += ` translateX(${x}px) translateY(${y}px)`;
+    layer2.style.transform += ` translateX(${x/2}px) translateY(${y/2}px)`;
+  });
+</script>
+
+</body>
+</html>
